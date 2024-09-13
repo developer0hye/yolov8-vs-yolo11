@@ -1,0 +1,1 @@
+# coco-pretrained-yolov8-ap-per-class
