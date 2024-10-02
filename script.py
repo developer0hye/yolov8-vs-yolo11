@@ -2,15 +2,24 @@ import os
 import re
 import pandas as pd
 
-# Step 1: Run YOLO validation for different models and store logs
-for m in ['n', 's', 'm', 'l', 'x']:
-    os.system(f'yolo val data=coco.yaml model=yolov8{m}.pt >> yolov8{m}-coco-results.txt')
+# Define model prefixes and model variants
+model_prefixes = ['yolov8', 'yolo11']
+model_variants = ['n', 's', 'm', 'l', 'x']
 
-# Step 2: Extract information from the log files and create CSVs
-log_files = [f'yolov8{m}-coco-results.txt' for m in ['n', 's', 'm', 'l', 'x']]
+# Step 1: Run YOLO validation for different models and store logs
+for model_prefix in model_prefixes:
+    for variant in model_variants:
+        model_name = f'{model_prefix}{variant}'
+        log_file = f'{model_name}-coco-results.txt'
+        os.system(f'yolo val data=coco.yaml model={model_name}.pt >> {log_file}')
+
+# Collect all log files
+log_files = [f'{model_prefix}{variant}-coco-results.txt' for model_prefix in model_prefixes for variant in model_variants]
+
+# Define the regex pattern for extracting data
 pattern = r"\s*(\w+[\s\w]*)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)"
 
-for log_file_path in log_files:
+def process_log_file(log_file_path):
     # Initialize lists to store data
     classes = []
     images = []
@@ -49,3 +58,7 @@ for log_file_path in log_files:
     df.to_csv(csv_file_path, index=False)
 
     print(f"Results saved to {csv_file_path}")
+
+# Step 2: Extract information from the log files and create CSVs
+for log_file_path in log_files:
+    process_log_file(log_file_path)
