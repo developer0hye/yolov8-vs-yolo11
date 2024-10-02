@@ -1,4 +1,4 @@
-# coco-pretrained-yolov8-ap-per-class
+# yolov8-vs-yolo11
 
 - [YOLOv8n](yolov8n-coco-results.csv)
 - [YOLOv8s](yolov8s-coco-results.csv)
