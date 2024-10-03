@@ -2,8 +2,6 @@
 
 ## Evaluation Results
 
-I didn't measure inference time of models because I was too lazy, and Ultralytics had already done it.
-
 ### YOLOv8 vs YOLO11 AP
 
 | Model Size | YOLOv8 (mAP50-95) | YOLO11 (mAP50-95) | mAP50-95 Improvement (YOLO11 - YOLOv8) |
@@ -38,6 +36,10 @@ I didn't measure inference time of models because I was too lazy, and Ultralytic
 | l          | 165.2                 | 86.9                  | 47.40%             |
 | x          | 257.8                 | 194.9                 | 24.40%             |
 
+
+I didn't measure inference time of models because I was too lazy, and Ultralytics had already done it.
+
+To examine the AP per class in detail, refer to the CSV files below:
 
 ---
 - [YOLOv8n.csv](yolov8n-coco-results.csv)
