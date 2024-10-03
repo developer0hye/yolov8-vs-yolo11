@@ -4,13 +4,34 @@
 
 I didn't measure inference time of models because I was too lazy, and Ultralytics had already done it.
 
-| Model Config | YOLOv8 (mAP50-95) | YOLO11 (mAP50-95) | mAP50-95 Improvement (YOLO11 - YOLOv8) |
+| Model Size | YOLOv8 (mAP50-95) | YOLO11 (mAP50-95) | mAP50-95 Improvement (YOLO11 - YOLOv8) |
 |--------------|-------------------|-------------------|----------------------------------------|
 | N            | 0.371             | 0.392             | 0.021                                  |
 | S            | 0.447             | 0.467             | 0.020                                  |
 | M            | 0.501             | 0.514             | 0.013                                  |
 | L            | 0.529             | 0.532             | 0.003                                  |
 | X            | 0.540             | 0.547             | 0.007                                  |
+
+---
+
+| Model Size | YOLOv8 Parameters (M) | YOLO11 Parameters (M) | Reduction Rate (%) |
+|------------|-----------------------|-----------------------|--------------------|
+| n          | 3.2                   | 2.6                   | 18.75%             |
+| s          | 11.2                  | 9.4                   | 16.07%             |
+| m          | 25.9                  | 20.1                  | 22.39%             |
+| l          | 43.7                  | 25.3                  | 42.09%             |
+| x          | 68.2                  | 56.9                  | 16.55%             |
+
+---
+
+| Model Size | YOLOv8 FLOPs (B)      | YOLO11 FLOPs (B)      | Reduction Rate (%) |
+|------------|-----------------------|-----------------------|--------------------|
+| n          | 8.7                   | 6.5                   | 25.29%             |
+| s          | 28.6                  | 21.5                  | 24.83%             |
+| m          | 78.9                  | 68.0                  | 13.81%             |
+| l          | 165.2                 | 86.9                  | 47.40%             |
+| x          | 257.8                 | 194.9                 | 24.40%             |
+
 
 ---
 - [YOLOv8n.csv](yolov8n-coco-results.csv)
@@ -45,3 +66,7 @@ I didn't measure inference time of models because I was too lazy, and Ultralytic
 ## [YOLOv8x](yolov8x-scoco-results.csv) vs [YOLO11x](yolo11x-coco-results.csv)
 
 ![fig1_x](fig1_x.png)
+
+## Fun Facts
+
+ChatGPT4 played a significant role in helping me with this. I provided the prompts, and it handled the details.
