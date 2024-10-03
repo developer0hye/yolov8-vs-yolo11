@@ -4,6 +4,8 @@
 
 I didn't measure inference time of models because I was too lazy, and Ultralytics had already done it.
 
+### YOLOv8 vs YOLO11 AP
+
 | Model Size | YOLOv8 (mAP50-95) | YOLO11 (mAP50-95) | mAP50-95 Improvement (YOLO11 - YOLOv8) |
 |--------------|-------------------|-------------------|----------------------------------------|
 | N            | 0.371             | 0.392             | 0.021                                  |
@@ -14,6 +16,8 @@ I didn't measure inference time of models because I was too lazy, and Ultralytic
 
 ---
 
+### YOLOv8 vs YOLO11 Parameters
+
 | Model Size | YOLOv8 Parameters (M) | YOLO11 Parameters (M) | Reduction Rate (%) |
 |------------|-----------------------|-----------------------|--------------------|
 | n          | 3.2                   | 2.6                   | 18.75%             |
@@ -23,6 +27,8 @@ I didn't measure inference time of models because I was too lazy, and Ultralytic
 | x          | 68.2                  | 56.9                  | 16.55%             |
 
 ---
+
+### YOLOv8 vs YOLO11 FLOPs
 
 | Model Size | YOLOv8 FLOPs (B)      | YOLO11 FLOPs (B)      | Reduction Rate (%) |
 |------------|-----------------------|-----------------------|--------------------|
